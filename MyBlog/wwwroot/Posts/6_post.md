@@ -1,55 +1,64 @@
-﻿Obtendo dado em cache com Service Worker
-============
-Como utilizar Service Worker para obter dado do cache quando o usuário está offline
-------------
+﻿O que é a notificação Push?
+Publicado em 06/03/2015 por Hugo Yang
+O que é a notificação push?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+Domingo a noite, você assistindo televisão e de repente seu celular vibra e toca o som. É o iFood: “Peça agora uma pizza e ganhe um guaraná!”.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Essas mensagens e notificações que recebemos todos os dias dos apps instalados em nossos smartphones, PCs e tablets são notificações push. 
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+Elas vem com o conceito de atualiza-lo de tudo que ocorre nos seus apps sem que você tenha que desbloquear o celular. 
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Este post vai apresentar como estimular o acesso de usuários e clientes no seu aplicativo, com as notificações push.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+Uma das maiores razões para que você tenha um app é para que você possa se comunicar diretamente com seus usuários através dos pushs.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+E na Fabapp não pensamos diferentes, por isto que investimos tempo para desenvolver a melhor plataforma de envio de notificações push e apresentarei algumas características e como utilizá-lo em nossa plataforma.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+As Notificações Push
+Você já deve ter recebido uma mensagem que aparece assim no seu celular como na imagem abaixo, certo?
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Essa é a forma mais comum do app se comunicar com o seu usuário.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+Sejam novas mensagens em aplicativos de conversas, de apps como o Whatsapp ou Telegram, ou para notificações de atualizações de apps de redes sociais ou jogos.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Todas as vezes que o app quiser comunicar para o usuário que tem algo novo, a notificação push será a forma mais eficiente e rápida para que o usuário volte a abrir o aplicativo.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+1° Passo - Recebimento da Notificação Push
+A palavra Push, traduzida do inglês, significa empurrar.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Talvez, no seu dia a dia,  você já enfrentou uma porta escrita com o aviso de empurrar em inglês.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+Sabendo que o termo push, é o “empurrão” dessa tecnologia no envio da mensagem, a palavra “notification” (notificação) é designada para a mensagem recebida no seu celular.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Abaixo mostramos a você os elementos que compõem uma notificação push:
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+1- Imagem da notificação (ícone do seu App).
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+2- Título da Mensagem.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+3- A mensagem (limite de 160 caracteres).
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lacus mollis, tristique magna quis, scelerisque nisl. In finibus eros in odio feugiat, eu pretium enim ultrices. Aliquam pulvinar interdum mi at tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent rhoncus ipsum sit amet odio interdum, id luctus erat viverra. Mauris condimentum odio eget mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ultrices sollicitudin justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ipsum facilisis, dapibus ex at, rhoncus diam. Donec ultrices interdum nisi, quis vestibulum augue gravida eu. Nunc risus ex, vestibulum sed pulvinar vel, egestas ut eros. Donec sollicitudin nec magna eget ultrices.
+Outra característica importante dessa tecnologia é do aplicativo não estar operando ou aberto no recebimento da mensagem. Ao clicar na notificação o app vai ser aberto, seja na primeira página ou em uma parte específica.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempor neque eget metus pulvinar, sed pretium justo dignissim. Vivamus nec auctor tellus. Fusce iaculis nisi et nisi pellentesque dictum quis eget libero. Vivamus ullamcorper id tortor ac tincidunt. Aenean arcu elit, maximus at rhoncus in, sollicitudin eleifend orci. In hac habitasse platea dictumst. Cras vitae orci et mauris vehicula mattis. Quisque efficitur viverra lacinia. In et lacinia nulla, sed laoreet erat. In hac habitasse platea dictumst.
+Se eu fizer meu app na Fábrica de Aplicativos, poderei usar esse recurso nos meus aplicativos?
 
-Duis dignissim sollicitudin elit, non ullamcorper nisl bibendum sit amet. 
+
+Sim. Ao criar e publicar seu app feito na nossa plataforma, você poderá enviar notificações push para os usuários que tiverem o seu aplicativo instalado.
+
+Use as notificações para empurrar uma mensagem e puxar o usuário ao seu App.
+
+Nós precisamos da linguagem certa para tornar essa funcionalidade útil.
+
+Tome apenas o cuidado de não enviar notificações push desnecessárias ou desinteressantes, pois o uso excessivo pode levar o usuário a desinstalar o seu app.
+
+Se a mensagem for usada de maneira apropriada você terá uma grande oportunidade de comunicação e engajamento. Veja uma demonstração do recebimento da notificação:
+
+Resumo da Função
+A Notificação Push é um tipo de mensagem enviada para aplicativos de celular ou aplicativos gerais. Ela deve proporcionar conteúdo pertinente ao seu usuário com o intuito de engajamento.
+
+Na Fabapp, a fábrica de aplicativos, as notificações push ou push notifications estão disponíveis em todos os planos e podem ser enviadas para usuários iPhone e Android após o app estar publicado e ser baixado nas lojas App Store e Play Store.
+
+Gostou do post? Entendeu o que são as notificações push?
+
+Quer saber como configurar e enviar notificações push na plataforma da Fabapp?
