@@ -13,7 +13,9 @@
                 .then(function (data) {
 
                     var resolveSuccess = function () {
-                        resolve('The connection is OK, showing latest results');
+                        resolve('A conexão está boa, mostrando os últimos resultados.');
+                        document.getElementById("connection-status").removeAttribute("class", "show");
+                        document.getElementById("connection-status").setAttribute("class", "hide");                        
                     };
 
                     if (text) {
@@ -28,10 +30,18 @@
                     }
 
                 }).catch(function (e) {
-                    resolve('No connection, showing offline results');
+                    resolve('Sem conexão, mostrando resultados offline.');
+                    document.getElementById("connection-status").removeAttribute("class", "hide");
+                    document.getElementById("connection-status").setAttribute("class", "show");
+                    document.getElementById("connection-status").setAttribute("class", "alert alert-danger show");
                 });
 
-            setTimeout(function () { resolve('The connection is hanging, showing offline results'); }, 800);
+            setTimeout(function () {
+                resolve('A conexão está interrompida, mostrando resultados offline.');
+                //document.getElementById("connection-status").removeAttribute("class", "hide");
+                //document.getElementById("connection-status").setAttribute("class", "show");
+                //document.getElementById("connection-status").setAttribute("class", "alert alert-warning show");
+            }, 800);
         });
     }
 

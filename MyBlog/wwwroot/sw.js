@@ -119,7 +119,7 @@ self.addEventListener('backgroundfetchsuccess', (event) => {
 });
 
 self.addEventListener('push', function (event) {
-    event.waitUntil(self.registration.showNotification('Maki Blog!', {
+    event.waitUntil(self.registration.showNotification('Code Behind!', {
         body: event.data.text(),
         icon: '/images/notification.png'
     }));

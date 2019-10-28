@@ -1,0 +1,62 @@
+﻿
+@font-face {
+    font-family: 'atarist8x16systemfont';
+    src: url('../font/atarist8x16systemfont.ttf') format('truetype');
+}
+
+/*--------------------------*/
+
+body {
+    background:#f2f3f8; 
+}
+
+nav {
+    background-color: #003E7E;
+}
+
+.hide{
+    display:none;
+}
+
+.fonte {
+    font-family: atarist8x16systemfont;
+}
+
+.bg-azul {
+    background: #003E7E;
+}
+
+#install-container {
+    background-color: #070252;
+    color: #fff;
+}
+
+button.btn-link {
+    text-decoration: none;
+    background: TRANSPARENT;
+}
+
+button.btn-link:hover{
+    text-decoration: none;
+    background: TRANSPARENT;
+}
+
+.navbar-light .navbar-brand {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.btn-big{
+    width:100%;
+}
+
+footer.border-top.footer.text-muted {
+    background: #ccc;
+}
