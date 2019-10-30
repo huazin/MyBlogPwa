@@ -7,21 +7,25 @@
 </div>
 
 <div class="alert" id="connection-status"></div>
-
-<div id="containerPosts" class="">
-    <div class="blog-list card-columns row" id="blog-list">
-    </div>
-
-    <div class="center">
-        <button class="btn btn-primary btn-big" onclick="pageEvents.loadMoreBlogPosts();">ver mais</button>
-        <br /><br />
-    </div>
+<div class="blog-list card-columns row" id="blog-list">
 </div>
 
-<div id="containerItem" class="hide">
-    <div id="blog-item-container"></div>
+<div>
+
 </div>
 
+<div class="center">
+    <button class="btn btn-primary btn-big" onclick="pageEvents.loadMoreBlogPosts();">ver mais</button>
+    <br /><br />
+</div>
+
+<div class="row">
+    <input class="col-sm-8 ml-3 w-75" type="text" id="findText" placeholder="Pesquisar Post"
+           aria-label="Search">
+    <button type="button" class="btn btn-primary col-sm-2 w-25" onclick="pageEvents.findBlogPosts();">Pesquisar</button>
+</div>
+
+<div id="blog-item-container"></div>
 
 @*<div class="create-profile">
 
@@ -66,7 +70,7 @@
                 <button onclick="pageEvents.loadBlogPost('{{Link}}');" class="btn btn-primary">ir</button>
             </div>
         </div>*@
-    <div class="col-lg-4 col-sm-6 mb-4">
+    <div class="col-lg-4 col-sm-6 mb-4" {{invisivel}}>
         <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
@@ -234,7 +238,6 @@
     <script>
         function clearBox() {
             document.getElementById("blog-item-container").innerHTML = "";
-            
         }
     </script>
 }

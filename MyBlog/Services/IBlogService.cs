@@ -8,5 +8,7 @@ namespace MyBlog.Controllers
         string GetPostText(string link);
 
         List<BlogPost> GetOlderPosts(int oldestPostId);
+        List<BlogPost> FindPost(string title);
+        void Inserir(BlogPost item);
     }
 }

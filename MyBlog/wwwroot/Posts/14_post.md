@@ -1,0 +1,1 @@
+Ola Pessoal,  Estou criando este trabalho para que vocês possam submeter o site PWA que vocês construíram. Favor submeter um arquivo zip com a pasta completa do seu site e um arquivo de documentação (readme.md) na pasta raiz, detalhando os principais diretórios da solução e como executar a sua solução.

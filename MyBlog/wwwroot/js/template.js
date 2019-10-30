@@ -6,11 +6,22 @@
         template = template.replace('{{Title}}', item.title);
         template = template.replace('{{ShortDescription}}', item.shortDescription);
         template = template.replace('{{Link}}', item.link);
+        template = template.replace('{{invisivel}}', 'visivel');
         return template;
     }
 
     function appendBlogList(items) {
         var cardHtml = '';
+        for (var i = 0; i < items.length; i++) {
+            cardHtml += generateBlogItem(items[i]);
+        }
+
+        $('.blog-list').append(cardHtml);
+    }
+
+    function appendBlogListFind(items) {
+        var cardHtml = '';
+        $('.blog-list').html("");
         for (var i = 0; i < items.length; i++) {
             cardHtml += generateBlogItem(items[i]);
         }
@@ -27,6 +38,7 @@
 
     return {
         appendBlogList: appendBlogList,
-        showBlogItem: showBlogItem
+        showBlogItem: showBlogItem,
+        appendBlogListFind: appendBlogListFind 
     }
 });

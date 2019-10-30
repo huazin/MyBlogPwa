@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,12 +13,14 @@ namespace MyBlog.Controllers
         {
             _env = env;
         }
+        private static List<BlogPost> _Posts { get; set; }
 
-        private List<BlogPost> Posts
+        private static List<BlogPost> Posts
         {
             get
             {
-                return new List<BlogPost>() {
+                if (_Posts == null || _Posts.Count == 0)
+                    _Posts =  new List<BlogPost>() {
                 new BlogPost { PostId = 1, Title = "API", ShortDescription = "Oque é? veja aqui em primeira mão" },
                 new BlogPost { PostId = 2, Title = "Indexed DB", ShortDescription = "O fim do sql server?" },
                 new BlogPost { PostId = 3, Title = "Cache", ShortDescription = "Amigo ou inimigo?" },
@@ -31,6 +34,8 @@ namespace MyBlog.Controllers
                 new BlogPost { PostId = 11, Title = "Angular", ShortDescription = "a evolução do JavaScript?" },
                 new BlogPost { PostId = 12, Title = "React", ShortDescription = "A nova solução do facebook" }
             };
+
+                return _Posts;
             }
         }
 
@@ -48,7 +53,9 @@ namespace MyBlog.Controllers
 
         public List<BlogPost> FindPost(string title)
         {
-            var post = Posts.Where(p => p.Title.ToUpper().Contains(title));
+            if (string.IsNullOrEmpty(title))
+                return Posts;
+            var post = Posts.Where(_ => _.Title.ToUpper().Contains(title.ToUpper()));
             return post.ToList();
 
         }
@@ -62,6 +69,30 @@ namespace MyBlog.Controllers
                 return posts;
 
             return posts.Take(3).ToList();
+        }
+
+        public void Inserir(BlogPost item)
+        {
+            try
+            {
+                item.PostId = _Posts.Max(p => p.PostId) + 1;
+
+                string nomeArquivo = $"{_env.WebRootPath}/Posts/{item.PostId}_post.md";
+
+                StreamWriter writer = new StreamWriter(nomeArquivo);
+
+                writer.WriteLine(item.Texto);
+
+                writer.Close();
+
+                _Posts.Add(item);
+            }
+            catch (System.Exception e)
+            {
+
+                throw;
+            }
+
         }
     }
 }

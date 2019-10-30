@@ -70,6 +70,19 @@
 
     }
 
+    function getPostsFind(textoPesquisa) {
+
+        return new Promise(function (resolve, reject) {
+                blogInstance.getItems().then(function (results) {
+                    var posts = Object.keys(results).map(function (k) { return results[k] }).reverse();
+                    oldestBlogPostId = "";
+                    resolve(posts.filter(p => p.title == textoPesquisa));
+                });
+
+        });
+
+    }
+
     function getOldestBlogPostId() {
         return oldestBlogPostId;
     }
@@ -79,6 +92,7 @@
         getPosts: getPosts,
         getOldestBlogPostId: getOldestBlogPostId,
         addPostText: addPostText,
-        getPostText: getPostText
+        getPostText: getPostText,
+        getPostsFind: getPostsFind
     }
 });

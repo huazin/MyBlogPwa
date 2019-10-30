@@ -47,6 +47,11 @@ namespace MyBlog.Controllers
             var posts = _blogService.GetOlderPosts(oldestBlogPostId);
             return Json(posts);
         }
+        public JsonResult FindBlogPosts(string title)
+        {
+            var posts = _blogService.FindPost(title);
+            return Json(posts);
+        }
 
         public ContentResult Post(string link)
         {
