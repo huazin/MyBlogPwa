@@ -8,15 +8,20 @@
 
 <div class="alert" id="connection-status"></div>
 
-<div class="blog-list card-columns row" id="blog-list">
+<div id="containerPosts" class="">
+    <div class="blog-list card-columns row" id="blog-list">
+    </div>
+
+    <div class="center">
+        <button class="btn btn-primary btn-big" onclick="pageEvents.loadMoreBlogPosts();">ver mais</button>
+        <br /><br />
+    </div>
 </div>
 
-<div class="center">
-    <button class="btn btn-primary btn-big" onclick="pageEvents.loadMoreBlogPosts();">ver mais</button>
-    <br /><br />
+<div id="containerItem" class="hide">
+    <div id="blog-item-container"></div>
 </div>
 
-<div id="blog-item-container"></div>
 
 @*<div class="create-profile">
 
@@ -229,6 +234,7 @@
     <script>
         function clearBox() {
             document.getElementById("blog-item-container").innerHTML = "";
+            
         }
     </script>
 }
