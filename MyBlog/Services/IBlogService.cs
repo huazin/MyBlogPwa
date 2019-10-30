@@ -9,5 +9,6 @@ namespace MyBlog.Controllers
 
         List<BlogPost> GetOlderPosts(int oldestPostId);
         List<BlogPost> FindPost(string title);
+        void Inserir(BlogPost item);
     }
 }
