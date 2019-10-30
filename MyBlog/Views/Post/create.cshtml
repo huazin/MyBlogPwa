@@ -1,13 +1,13 @@
 ﻿@model MyBlog.Controllers.BlogPost
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "Novo Post";
 }
 
 
 <div class="alert" id="connection-status"></div>
 
-<h4>BlogPost</h4>
+<h4>Novo Post</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -31,14 +31,12 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
+                <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Voltar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Voltar para home</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
