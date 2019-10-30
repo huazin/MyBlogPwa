@@ -1,4 +1,6 @@
-﻿ndexedDB é uma API para armazenamento client-side de quantidades significantes de informações e buscas com alta performance por índices. Enquanto DOM Storage é útil para armazenamento de pequenas quantidade de dados, IndexedDB é a solução para grande porção de dados estruturados.
+﻿O fim do sql server?
+
+IndexedDB é uma API para armazenamento client-side de quantidades significantes de informações e buscas com alta performance por índices. Enquanto DOM Storage é útil para armazenamento de pequenas quantidade de dados, IndexedDB é a solução para grande porção de dados estruturados.
 
 Esta página basicamente é o ponto de entrada para uma descrição ténica dos objetos da API. Precisando de suporte ainda mais inicial consulte os Conceitos Básicos sobre IndexedDb. Para mais detalhes sobre a implementação, veja Usando IndexedDB.
 

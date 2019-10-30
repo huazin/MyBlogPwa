@@ -1,4 +1,6 @@
-﻿Qualquer site ou serviço que esteja hoje em funcionamento, terá grande parte de seus acessos oriundos de dispositivos móveis. E em muitas vezes é natural o pensamento de se desenvolver uma aplicação mobile.  Mas será que todos estão abordando suas apps de forma mais eficaz para os clientes finais?
+﻿aplicações super rapidas
+
+Qualquer site ou serviço que esteja hoje em funcionamento, terá grande parte de seus acessos oriundos de dispositivos móveis. E em muitas vezes é natural o pensamento de se desenvolver uma aplicação mobile.  Mas será que todos estão abordando suas apps de forma mais eficaz para os clientes finais?
 Seguem algumas perguntas para você refletir sobre o assunto:
 
 Quantos aplicativos de e-commerce você tem instalado no seu smartphone?

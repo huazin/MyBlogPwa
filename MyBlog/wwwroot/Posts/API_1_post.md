@@ -1,4 +1,6 @@
-﻿Se o título desse post chamou a sua atenção é por que você é mais uma daquelas pessoas que já tentou aprender e entender as famosas siglas: API, REST e “RESTful”. Contudo, por algum motivo ou outro, continua com dúvidas no assunto. Talvez você até ache que REST, por exemplo, se resume a simples novos métodos HTTP que, por sua vez, podem ser usados quando são realizadas novas requisições de um cliente a um sevidor na web.
+﻿Oque é? veja aqui em primeira mão
+
+Se o título desse post chamou a sua atenção é por que você é mais uma daquelas pessoas que já tentou aprender e entender as famosas siglas: API, REST e “RESTful”. Contudo, por algum motivo ou outro, continua com dúvidas no assunto. Talvez você até ache que REST, por exemplo, se resume a simples novos métodos HTTP que, por sua vez, podem ser usados quando são realizadas novas requisições de um cliente a um sevidor na web.
 
 Pensando nisso, nesse post, irei esclarecer alguns pontos sobre o assunto. E, se ao final do artigo, eu conseguir atingir o meu objetivo, você estará se perguntando: “OMG! onde posso aprender mais sobre o assunto!?” Então vamos lá!
 
