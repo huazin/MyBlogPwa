@@ -48,7 +48,9 @@ namespace MyBlog.Controllers
 
         public List<BlogPost> FindPost(string title)
         {
-            var post = Posts.Where(p => p.Title.ToUpper().Contains(title));
+            if (string.IsNullOrEmpty(title))
+                return Posts;
+            var post = Posts.Where(_ => _.Title.ToUpper().Contains(title.ToUpper()));
             return post.ToList();
 
         }

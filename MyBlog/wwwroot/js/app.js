@@ -26,6 +26,9 @@ window.pageEvents = {
     loadMoreBlogPosts: function () {
         blogService.loadMoreBlogPosts();
     },
+    findBlogPosts: function () {
+        blogService.findBlogPosts();
+    },
     tryAddHomeScreen: function () {
         defferedPrompt.prompt();
         defferedPrompt.userChoice.then((choiceResult) => {

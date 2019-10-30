@@ -3,6 +3,7 @@
     var blogLatestPostsUrl = '/Home/LatestBlogPosts/';
     var blogPostUrl = '/Home/Post/?link=';
     var blogMorePostsUrl = '/Home/MoreBlogPosts/?oldestBlogPostId=';
+    var findPostsUrl = '/Home/FindBlogPosts/?title=';
 
     function fetchPromise(url, link, text) {
 
@@ -38,9 +39,6 @@
 
             setTimeout(function () {
                 resolve('A conexão está interrompida, mostrando resultados offline.');
-                //document.getElementById("connection-status").removeAttribute("class", "hide");
-                //document.getElementById("connection-status").setAttribute("class", "show");
-                //document.getElementById("connection-status").setAttribute("class", "alert alert-warning show");
             }, 800);
         });
     }
@@ -53,6 +51,18 @@
                 clientStorage.getPosts()
                     .then(function (posts) {
                         template.appendBlogList(posts);
+                    })
+            });
+    }
+
+    function loadDataFind(url, textoPesquisa) {
+        fetchPromise(url + textoPesquisa)
+            .then(function (status) {
+                $('#connection-status').html(status);
+
+                clientStorage.getPostsFind(textoPesquisa)
+                    .then(function (posts) {
+                        template.appendBlogListFind(posts);
                     })
             });
     }
@@ -90,9 +100,15 @@
         loadData(blogMorePostsUrl + clientStorage.getOldestBlogPostId());
     }
 
+    function findBlogPosts() {
+        var textoPesquisa = $("#findText").val();
+        loadDataFind(findPostsUrl, textoPesquisa);
+    }
+
     return {
         loadLatestBlogPosts: loadLatestBlogPosts,
         loadBlogPost: loadBlogPost,
-        loadMoreBlogPosts: loadMoreBlogPosts
+        loadMoreBlogPosts: loadMoreBlogPosts,
+        findBlogPosts: findBlogPosts
     }
 });
