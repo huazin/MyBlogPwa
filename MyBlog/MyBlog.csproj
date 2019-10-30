@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Posts\1_post.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Lib.AspNetCore.WebPush" Version="1.2.0" />
     <PackageReference Include="Lib.Net.Http.WebPush" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />

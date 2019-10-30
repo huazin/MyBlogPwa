@@ -60,3 +60,8 @@ button.btn-link:hover{
 footer.border-top.footer.text-muted {
     background: #ccc;
 }
+
+img.card-img-top {
+    width: 348px;
+    height: 250px;
+}
