@@ -1,4 +1,6 @@
-﻿O que é a notificação Push?
+﻿Como envia-las?
+
+O que é a notificação Push?
 Publicado em 06/03/2015 por Hugo Yang
 O que é a notificação push?
 

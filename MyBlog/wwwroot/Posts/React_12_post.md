@@ -1,4 +1,6 @@
-﻿O que é React?
+﻿A nova solução do facebook
+
+O que é React?
 Como definido por seus criadores, React é “uma biblioteca JavaScript declarativa, eficiente e flexível para a criação de interfaces de usuário (UI)”.
 
 Essa biblioteca surgiu em 2011, no Facebook, e passou a ser utilizada na interface do mural de notícias da rede social.

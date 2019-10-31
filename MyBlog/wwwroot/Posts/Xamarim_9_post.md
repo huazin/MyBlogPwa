@@ -1,4 +1,6 @@
-﻿O que é Xamarin?
+﻿Aplicativos nativos em c#?
+
+O que é Xamarin?
 por Vinicius Quaiato | out 10, 2016 | Desenvolvimento, Xamarin | 12 comentários
 
 Há algum tempo o mercado de desenvolvimento vem ouvindo falar sobre Xamarin. Inicialmente não era um assunto ao qual muitas pessoas davam atenção: até pouco tempo Xamarin era apenas uma empresa (e um conjunto de tecnologias) que rodavam sobre o Mono. Até que um belo dia tudo mudou. A Microsoft anunciou a compra da Xamarin. Dentre os muitos significados que essa notícia pode ter, um dos mais interessantes é que o mercado de TI passou a olhar para a Xamarin e sua tecnologia como uma alternativa bastante interessante e viável.

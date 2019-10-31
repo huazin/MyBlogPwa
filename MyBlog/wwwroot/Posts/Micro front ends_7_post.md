@@ -1,4 +1,6 @@
-﻿Você pode pegar o código do projeto no github, não precisa fazer o código junto com o artigo, até porque não vou ensinar as tecnologias envolvidas, e sim o conceito de Micro Front End.
+﻿Nova moda Micro front ends
+
+Você pode pegar o código do projeto no github, não precisa fazer o código junto com o artigo, até porque não vou ensinar as tecnologias envolvidas, e sim o conceito de Micro Front End.
 Resultado de imagem para micro frontend
 Quando aprendemos Front End nos cursos da Alura, Udemy, etc… Fazemos um app utilizando tecnologia x, e nesse app colocamos tudo que a aplicação precisa fazer. Bem, para apps para estudo, ou aplicações que não tem muita funcionalidade, isso funciona bem, porém quando a aplicação cresce, ou a ideia é que seja uma aplicação grande, temos alguns problemas:
 Muitos testes unitários, isso faz com que o CI e CD sejam mais demorados

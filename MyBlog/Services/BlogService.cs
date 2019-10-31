@@ -12,38 +12,40 @@ namespace MyBlog.Controllers
         public BlogService(IHostingEnvironment env)
         {
             _env = env;
+
+            if (Posts == null || Posts.Count == 0)
+            {
+                Posts = new List<BlogPost>();
+                var arquivos = Directory.GetFiles($"{_env.WebRootPath}/Posts/");
+                foreach (var item in arquivos)
+                {
+                    var nome = item.Replace($"{_env.WebRootPath}/Posts/", "");
+                    var atributos = nome.Split("_");
+                    var texto = File.ReadLines(item);
+                    if (atributos.Length != 3 || texto.Count() == 0)
+                        continue;
+                    Posts.Add(
+                        new BlogPost()
+                        {
+                            PostId = Int32.Parse(atributos[1]),
+                            Title = atributos[0],
+                            ShortDescription = texto.FirstOrDefault()
+                        }
+                    );
+                }
+            }
         }
-        private static List<BlogPost> _Posts { get; set; }
 
         private static List<BlogPost> Posts
         {
-            get
-            {
-                if (_Posts == null || _Posts.Count == 0)
-                    _Posts =  new List<BlogPost>() {
-                new BlogPost { PostId = 1, Title = "API", ShortDescription = "Oque é? veja aqui em primeira mão" },
-                new BlogPost { PostId = 2, Title = "Indexed DB", ShortDescription = "O fim do sql server?" },
-                new BlogPost { PostId = 3, Title = "Cache", ShortDescription = "Amigo ou inimigo?" },
-                new BlogPost { PostId = 4, Title = "Service Worker", ShortDescription = "Um grande ferramenta para front end" },
-                new BlogPost { PostId = 5, Title = "PWA", ShortDescription = "aplicações super rapidas" },
-                new BlogPost { PostId = 6, Title = "Notificações push", ShortDescription = "Como envia-las?" },
-                new BlogPost { PostId = 7, Title = "Micro front ends", ShortDescription = "Nova moda Micro front ends" },
-                new BlogPost { PostId = 8, Title = "Blazor", ShortDescription = "Oque é?" },
-                new BlogPost { PostId = 9, Title = "Xamarim", ShortDescription = "Aplicativos nativos em c#?" },
-                new BlogPost { PostId = 10, Title = "Unity", ShortDescription = "criando jogos com C#" },
-                new BlogPost { PostId = 11, Title = "Angular", ShortDescription = "a evolução do JavaScript?" },
-                new BlogPost { PostId = 12, Title = "React", ShortDescription = "A nova solução do facebook" }
-            };
-
-                return _Posts;
-            }
+            get; set;
         }
 
         public string GetPostText(string link)
         {
             var post = Posts.FirstOrDefault(_ => _.Link == link);
 
-            return File.ReadAllText($"{_env.WebRootPath}/Posts/{post.PostId}_post.md");
+            return File.ReadAllText($"{_env.WebRootPath}/Posts/{post.Title}_{post.PostId}_post.md");
         }
 
         public List<BlogPost> GetLatestPosts()
@@ -75,17 +77,19 @@ namespace MyBlog.Controllers
         {
             try
             {
-                item.PostId = _Posts.Max(p => p.PostId) + 1;
+                item.PostId = Posts.Max(p => p.PostId) + 1;
 
-                string nomeArquivo = $"{_env.WebRootPath}/Posts/{item.PostId}_post.md";
+                string nomeArquivo = $"{_env.WebRootPath}/Posts/{item.Title}_{item.PostId}_post.md";
 
                 StreamWriter writer = new StreamWriter(nomeArquivo);
 
+                writer.WriteLine(item.ShortDescription);
+                writer.WriteLine("");
                 writer.WriteLine(item.Texto);
 
                 writer.Close();
 
-                _Posts.Add(item);
+                Posts.Add(item);
             }
             catch (System.Exception e)
             {

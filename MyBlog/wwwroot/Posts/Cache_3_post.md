@@ -1,4 +1,6 @@
-﻿Introdução
+﻿Amigo ou inimigo?
+
+
 HTML5 fornece um mecanismo de cache de aplicativo que permite que aplicações baseadas na web sejam executadas offline. Os desenvolvedores podem usar a interface do cache do aplicativo (AppCache) para especificar os recursos que o navegador deve armazenar em cache e disponibilizar aos usuários offline. Os aplicativos que estão em cache de carga e funcionam corretamente, mesmo se os usuários clicarem no botão de atualização quando estão offline.
 
 Usando um cache de aplicativo dá uma aplicação os seguintes benefícios:
