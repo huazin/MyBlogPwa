@@ -29,7 +29,8 @@ namespace MyBlog.Controllers
                         {
                             PostId = Int32.Parse(atributos[1]),
                             Title = atributos[0],
-                            ShortDescription = texto.FirstOrDefault()
+                            ShortDescription = texto.FirstOrDefault(),
+                            LinkImage = texto.Skip(1).FirstOrDefault()
                         }
                     );
                 }
@@ -84,6 +85,8 @@ namespace MyBlog.Controllers
                 StreamWriter writer = new StreamWriter(nomeArquivo);
 
                 writer.WriteLine(item.ShortDescription);
+                writer.WriteLine(item.LinkImage);
+
                 writer.WriteLine("");
                 writer.WriteLine(item.Texto);
 

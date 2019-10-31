@@ -13,6 +13,7 @@ namespace MyBlog.Controllers
         public string Link { get { return ShortDescription.UrlFriendly(50); }  }
         [DataType(DataType.MultilineText)]
         public string Texto { get; set; }
+        public string LinkImage { get; set; }
 
     }
 }

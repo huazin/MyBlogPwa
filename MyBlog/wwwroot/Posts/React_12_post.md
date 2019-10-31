@@ -1,5 +1,5 @@
 ﻿A nova solução do facebook
-
+https://blog.fellyph.com.br/wp-content/uploads/2016/06/react-js.png
 O que é React?
 Como definido por seus criadores, React é “uma biblioteca JavaScript declarativa, eficiente e flexível para a criação de interfaces de usuário (UI)”.
 

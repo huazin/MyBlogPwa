@@ -1,4 +1,5 @@
 ﻿Oque é? veja aqui em primeira mão
+https://programathor.com.br/blog/wp-content/uploads/2018/08/o-que-%C3%A9-api-676x355.jpg
 
 Se o título desse post chamou a sua atenção é por que você é mais uma daquelas pessoas que já tentou aprender e entender as famosas siglas: API, REST e “RESTful”. Contudo, por algum motivo ou outro, continua com dúvidas no assunto. Talvez você até ache que REST, por exemplo, se resume a simples novos métodos HTTP que, por sua vez, podem ser usados quando são realizadas novas requisições de um cliente a um sevidor na web.
 

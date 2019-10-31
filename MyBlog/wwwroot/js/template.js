@@ -6,6 +6,7 @@
         template = template.replace('{{Title}}', item.title);
         template = template.replace('{{ShortDescription}}', item.shortDescription);
         template = template.replace('{{Link}}', item.link);
+        template = template.replace('{{Image}}', item.linkImage);
         template = template.replace('{{invisivel}}', 'visivel');
         return template;
     }

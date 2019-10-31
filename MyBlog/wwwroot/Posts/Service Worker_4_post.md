@@ -1,5 +1,5 @@
 ﻿Um grande ferramenta para front end
-
+http://ravindranaik.com/wp-content/uploads/2018/02/1fbdd59d923c44cb.png
 
 O que é um service worker
 Um service worker é um script que seu navegador executa em segundo plano, separado da página da Web. Isso possibilita recursos que não precisam de uma página da Web ou de interação do usuário. Atualmente, eles já incluem recursos como notificações push e sincronização em segundo plano. No futuro, os service workers permitirão outras ações como sincronização periódica ou fronteira geográfica virtual. O principal recurso discutido neste tutorial é a capacidade de interceptar e gerenciar solicitações de rede, incluindo o gerenciamento programático de um cache de respostas.

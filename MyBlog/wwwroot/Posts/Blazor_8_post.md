@@ -1,5 +1,5 @@
 ﻿Oque é?
-
+https://miro.medium.com/max/1118/0*7cDDuUM3JVQWXJxD.jpg
 Blazor é um novo Framework SPA da Microsoft para desenvolvimento de aplicativos web baseados no navegador com .NET. A Microsoft anunciou um novo projeto experimental da organização ASP.NET chamado Blazor. Steve Sanderson é um desenvolvedor inglês da equipe ASP.NET na Microsoft e detalhou totalmente como o Blazor funciona.
 
 Blazor está começando em uma fase experimental para ver se é possível desenvolvê-lo e entregar um produto suportado. Este é um grande avanço!

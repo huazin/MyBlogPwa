@@ -1,5 +1,5 @@
 ﻿criando jogos com C#
-
+https://pbs.twimg.com/profile_images/882558757531791360/CGKUrcD9.jpg
 
 Características
 A Unity oferece aos usuários a capacidade de criar jogos em 2D e 3D,ela suporta as seguintes APIs: Direct3D no Windows e Xbox 360; OpenGL no MacOS,e Linux; OpenGL ES no Android e iOS; WebGL na Internet[6]. A Unity usa o MonoDevelop para a criação dos scripts[7]. Os programadores podem usar UnityScript (uma linguagem com sintaxe inspirada pelo ECMAScript, conhecido como JavaScript)[8], C#, ou Boo (que tem uma sintaxe de inspirada no Python). Em 2015 a Unity removeu o suporte a linguagem Boo,em 2017 a Unity anunciou que iria encerrar o suporte da linguagem UnityScript[9], que estava junto da engine desde sua criação.

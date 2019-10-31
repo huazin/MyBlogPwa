@@ -1,4 +1,5 @@
 ﻿Como envia-las?
+https://seuapp.com/wp-content/uploads/2018/12/notificacoes-push.png
 
 O que é a notificação Push?
 Publicado em 06/03/2015 por Hugo Yang

@@ -1,4 +1,5 @@
 ﻿Aplicativos nativos em c#?
+https://gfsitev4prodstorage.blob.core.windows.net/media/2019/06/Asset-4-100.jpg
 
 O que é Xamarin?
 por Vinicius Quaiato | out 10, 2016 | Desenvolvimento, Xamarin | 12 comentários

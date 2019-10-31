@@ -1,5 +1,5 @@
 ﻿aplicações super rapidas
-
+https://miro.medium.com/max/400/1*rZ8GSGbL2CkQnnLBrnjZtQ.png
 Qualquer site ou serviço que esteja hoje em funcionamento, terá grande parte de seus acessos oriundos de dispositivos móveis. E em muitas vezes é natural o pensamento de se desenvolver uma aplicação mobile.  Mas será que todos estão abordando suas apps de forma mais eficaz para os clientes finais?
 Seguem algumas perguntas para você refletir sobre o assunto:
 

@@ -1,4 +1,5 @@
 ﻿O fim do sql server?
+https://jordifernandes.com/wp-content/uploads/2015/07/indexeddb-750x400.jpg
 
 IndexedDB é uma API para armazenamento client-side de quantidades significantes de informações e buscas com alta performance por índices. Enquanto DOM Storage é útil para armazenamento de pequenas quantidade de dados, IndexedDB é a solução para grande porção de dados estruturados.
 

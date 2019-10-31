@@ -1,5 +1,5 @@
 ﻿a evolução do JavaScript?
-
+https://cdn.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.webp
 Em pouco tempo de estudos sobre programação web já nos deparamos com a palavra Angular, e quanto mais se estuda mais ela aparece. Até que nos convencemos de que vai ser bacana saber do que se trata.
 
 Aí começa a confusão, pois, o Angular não é mais do mesmo. Fica difícil compreender ele, pois, não dá para fazer boas analogias com o que já conhecemos. Ficam então as perguntas:
