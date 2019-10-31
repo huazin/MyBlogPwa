@@ -33,12 +33,17 @@
                             <a class="nav-link text-white'" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Post" asp-action="Create">Novo Post</a>
                         </li>
                     </ul>
+                </div>
+                <div class="row">
+                    @if (this.ViewContext.RouteData.Values["controller"].ToString().ToLower() == "home")
+                    {
+                        <input class="col-sm-6 ml-3 w-75" type="text" id="findText" placeholder="Pesquisar Post"
+                           aria-label="Search">
+                        <button type="button" class="btn btn-primary col-sm-4 w-25" onclick="pageEvents.findBlogPosts();">Pesquisar</button>
+                    }                    
                 </div>
             </div>
         </nav>
@@ -52,7 +57,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - Code Behind - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2019 - Code Behind
         </div>
     </footer>
 
